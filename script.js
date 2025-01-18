@@ -98,3 +98,47 @@ document.addEventListener("click", function (event) {
         downloadQrCodeDivFive.classList.add("hidden");  // Hide the QR code
     }
 });
+
+
+// Function to Open Modal
+function openModal() {
+    document.getElementById('modal').classList.remove('hidden');
+  }
+  
+  // Function to Close Modal
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+  
+  // Close modal on clicking outside the modal content
+  document.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  
+ // Auto-scroll lyrics effect
+const lyricsContainer = document.getElementById("lyrics");
+const lyricsContent = document.getElementById("lyricsContent");
+const audioPlayer = document.getElementById("audioPlayer");
+
+audioPlayer.addEventListener("play", () => {
+    let scrollHeight = lyricsContainer.scrollHeight - lyricsContainer.clientHeight;
+    lyricsContent.style.transition = "transform 15s linear";
+    lyricsContent.style.transform = `translateY(-${scrollHeight}px)`;
+});
+
+audioPlayer.addEventListener("pause", () => {
+    lyricsContent.style.transition = "none";
+    lyricsContent.style.transform = "translateY(0)";
+});
+
+// Character counter for input box
+const melodyInput = document.getElementById("melodyInput");
+melodyInput.addEventListener("input", function () {
+    document.querySelector("p.text-right").innerText = `${this.value.length}/500`;
+});
+
+  

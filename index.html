@@ -23,10 +23,62 @@
         body::-webkit-scrollbar {
             display: none;
         }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
     </style>
 </head>
 
 <body>
+
+
+  <!-- Modal -->
+<div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60">
+  <!-- Modal Container with Full Background Image -->
+  <div class="relative w-full max-w-lg p-10 text-center rounded-lg shadow-lg bg-cover bg-center"
+    style="background-image: url('./assests/modalimg.jpg');">
+    
+    <!-- Overlay for Better Readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+
+    <!-- Close Button -->
+    <button class="absolute top-3 right-3 text-gray-300 hover:text-white text-3xl z-10 bg-gray-700 rounded-full ps-2 pe-2" onclick="closeModal()">×</button>
+
+    <!-- Content -->
+    <div class="relative z-10 text-left">
+      <!-- Heading Left Aligned -->
+      <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-400 to-green-400">
+        Vibe <br /><span class="font-light">Your Moment</span>
+      </h1>
+    
+      <!-- Subtitle Left Aligned -->
+      <p class="mt-3 text-sm text-gray-300">Endless stream of personalized music tailored to any scenario</p>
+    <br/>
+      <!-- Button: Not Full Width, Starts from Left and Extends to Center -->
+      <button
+        class="mt-6 w-2/3 md:w-1/2 flex items-center justify-start px-4 py-2 rounded-md h-10 bg-white text-black hover:bg-gray-200 transition-shadow font-semibold text-sm">
+        <img src="./assests/google.webp"
+          alt="Google" class="h-6 mr-2">
+        Sign up with Google
+      </button>
+    </div>
+    
+  </div>
+</div>
+
+
+     <!-- Background Video -->
+     <video id="background-video" autoplay muted loop>
+        <source src="./assests/213407.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <nav class="w-full h-16 bg-gray-700 flex items-center justify-center">
         <div class="w-[82%] h-full flex items-center justify-between">
             <div class="w-auto h-full flex items-center">
@@ -37,13 +89,13 @@
                 <img src="melodio.png" class="w-36 relative right-3" alt="">
             </div>
             <div class="w-40 h-full flex items-center justify-end">
-                <button
+                <button onclick="openModal()"
                     class="w-[100px] rounded-full h-10 bg-[#c6f37c] hover:bg-[#a3d553] transition-shadow font-[Chillax]">Sign
                     Up</button>
             </div>
         </div>
     </nav>
-    <main class="w-full h-auto flex flex-col items-center bg-black">
+    <main class="w-full h-auto flex flex-col items-center ">
         <div class="w-[50rem] h-20 items-center flex justify-between">
             <div class="text-white">
                 <p class="text-xl">Our beta version app is now available for download.</p>
@@ -71,7 +123,45 @@
         <div class="text-6xl font-bold pt-8 bg-clip-text text-transparent bg-gradient-to-r from-[#cb7ff6] to-[#cbfc76]">
             Vibe Your Moment</div>
         <div class="text-2xl text-white pt-3">Endless stream of personalized music tailored to any scenario</div>
-        <div class="w-[42rem] h-[37rem] mt-12 rounded-3xl bg-gradient-to-r from-[#2e284a] to-[#3a2748]"></div>
+        
+        <div class="w-[42rem] h-[37rem] rounded-3xl bg-[#2b1638] p-6 text-white relative shadow-lg">
+          <!-- Lyrics Container (Auto Scroll) -->
+          <div id="lyrics" class="text-lg leading-relaxed h-[55%] overflow-hidden text-center px-4 relative">
+              <div id="lyricsContent" class="space-y-3">
+                  <p>Hey there, music lover, have you heard the news?</p>
+                  <p>Melodio’s here with tunes that'll light your fuse.</p>
+                  <p>With AI magic, we create your sound,</p>
+                  <p>Unlimited music, wherever you’re bound.</p>
+                  <p>Oh, Melodio, we’re here to redefine,</p>
+                  <p>Your music world, every beat, every rhyme.</p>
+                  <p>From gaming to workouts, or chillin' out at night,</p>
+                  <p>We got your tracks, everything feels just right.</p>
+              </div>
+          </div>
+  
+          <!-- Audio Player -->
+          <div class="w-full flex justify-center mt-4">
+              <audio id="audioPlayer" class="w-full max-w-lg" controls>
+                  <source src="./assests/song.mp3" type="audio/mpeg">
+              </audio>
+          </div>
+  
+          <!-- Melody Input Box -->
+          <p class="mt-4 text-gray-300 text-sm text-center">Describe the melody you need for your moment</p>
+          <textarea id="melodyInput" class="w-full h-24 mt-2 bg-[#3a2748] text-gray-200 p-4 rounded-md outline-none resize-none placeholder-gray-400"
+              placeholder="Feeling intrigued while exploring a new city"></textarea>
+          
+          <!-- Character Counter -->
+          <p class="text-gray-400 text-xs mt-1 text-right">0/500</p>
+  
+          <!-- Let's Vibe Button -->
+          <div class="flex justify-end mt-4">
+              <button class="bg-[#c6f37c] hover:bg-[#a3d553] text-black font-bold py-2 px-6 rounded-full flex items-center transition">
+                  <span class="mr-2">🎶</span> Let’s vibe
+              </button>
+          </div>
+      </div>
+        
         <div class="flex w-[42rem] text-sm mt-8">
             <p class="text-red-600">*</p>
             <p class="text-white ml-3">This is the demo version of Melodio AI.</p>
@@ -228,6 +318,9 @@
             </div>
         </footer>
     </main>
+
+
+   
 
     <script src="script.js"></script>
 </body>
