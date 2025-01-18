@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chillax:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow-y: scroll;
+            font-family: 'Chillax', sans-serif;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full h-16 bg-gray-700 flex items-center justify-center">
+        <div class="w-[82%] h-full flex items-center justify-between">
+            <div class="w-auto h-full flex items-center">
+                <div
+                    class="w-[44px] h-[44px] flex items-center justify-center rounded-xl bg-gradient-to-r from-[#343434] to-[#1d1d1d]">
+                    <img src="./Images/image-removebg-preview (2).png" class="" alt="" srcset="">
+                </div>
+                <img src="./Images/image-removebg-preview (1).png" class="w-36 relative right-3" alt="">
+            </div>
+            <div class="w-40 h-full flex items-center justify-end">
+                <button
+                    class="w-[100px] rounded-full h-10 bg-[#c6f37c] hover:bg-[#a3d553] transition-shadow font-[Chillax]">Sign
+                    Up</button>
+            </div>
+        </div>
+    </nav>
+    <main class="w-full h-auto flex flex-col items-center bg-black">
+        <div class="w-[50rem] h-20 items-center flex justify-between">
+            <div class="text-white">
+                <p class="text-xl">Our beta version app is now available for download.</p>
+                <p class="">Feel free to check it out and experience more features!</p>
+            </div>
+            <div class="w-60 flex items-center justify-between">
+                <div id="qr-container"
+                    class="w-28 h-11 rounded-lg bg-center bg-contain cursor-pointer bg-no-repeat bg-[url('https://static-web.melodio.ai/static/png/ic-apple-OX7sOQJv.png')]">
+                </div>
+                <!-- Hidden QR Code -->
+                <div id="qr-code" class="hidden absolute top-36 right-[510px] w-40 h-40">
+                    <img src="qrcode.png" alt="QR Code" />
+                </div>
+
+                <div id="google-container"
+                    class="w-28 h-11 rounded-lg bg-center bg-contain cursor-pointer bg-no-repeat bg-[url('https://static-web.melodio.ai/static/png/ic-google-Dm-vpZMl.png')]">
+                </div>
+                <!-- Hidden QR Code for Google -->
+                <div id="google-qr-code" class="hidden absolute top-36 right-[300px] w-40 h-40">
+                    <img src="qrcode.png" alt="QR Code" />
+                </div>
+
+            </div>
+        </div>
+        <div class="text-6xl font-bold pt-8 bg-clip-text text-transparent bg-gradient-to-r from-[#cb7ff6] to-[#cbfc76]">
+            Vibe Your Moment</div>
+        <div class="text-2xl text-white pt-3">Endless stream of personalized music tailored to any scenario</div>
+        <div class="w-[42rem] h-[37rem] mt-12 rounded-3xl bg-gradient-to-r from-[#2e284a] to-[#3a2748]"></div>
+        <div class="flex w-[42rem] text-sm mt-8">
+            <p class="text-red-600">*</p>
+            <p class="text-white ml-3">This is the demo version of Melodio AI.</p>
+        </div>
+        <div class="w-[42rem] mt-5">
+            <button
+                class="w-[116px] h-[32px] text-gray-50 opacity-50 hover:opacity-75 border rounded-full bg-none">Feedback</button>
+        </div>
+        <div class="w-[1200px] mt-[180px] flex items-center justify-between">
+            <div class="flex flex-col content-between space-y-6">
+                <p class="text-white text-[50px] w-[624px] h-auto font-bold leading-[57px]">Personalized Music Streams
+                </p>
+                <p class="text-white text-[18px] w-[624px] h-auto opacity-70">Melodio AI instantly responds to your mood
+                    or setting, creating an endless stream of perfect ambient music. It adapts in real-time, ensuring
+                    your environment always has the ideal soundtrack.</p>
+                <div class="rounded-full">
+                    <button id="download-container"
+                        class="mt-4 text-[18px] rounded-full border-[2px] w-[228px] h-[50px] bg-clip-text text-transparent bg-gradient-to-r from-[#cb7afa] to-[#c6f37c] font-bold"
+                        style="border-color: linear-gradient(to right, #cb7afa, #c6f37c) 1;">Download APP <i
+                            class="fa-solid fa-arrow-right ml-2 text-xl"></i></button>
+                </div>
+
+                <!-- Hidden QR Code for Download APP -->
+                <div id="qr-code-download" class="hidden w-40 h-40">
+                    <img src="qrcode.png" alt="QR Code" />
+                </div>
+
+            </div>
+            <div class="">
+                <img src="https://static-web.melodio.ai/static/png/image-1-1x-CmZhO6ag.png" alt="" class="h-[400px]">
+            </div>
+        </div>
+        <div class="w-[1200px] mt-[250px] flex items-center justify-between">
+            <div class="">
+                <img src="https://static-web.melodio.ai/static/png/image-2-1x-CZo-mUgw.png" alt="" class="h-[400px]">
+            </div>
+            <div class="flex flex-col content-between space-y-6">
+                <p class="text-white text-[50px] w-[624px] h-auto font-bold leading-[57px]">Play and Modify On The Go
+                </p>
+                <p class="text-white text-[18px] w-[624px] h-auto opacity-70">Seamlessly adapts to any command, ensuring
+                    your music perfectly reflects your present state.</p>
+                <div class="rounded-full">
+                    <button
+                        class="mt-4 text-[18px] rounded-full border-[2px] w-[228px] h-[50px] bg-clip-text text-transparent bg-gradient-to-r from-[#cb7afa] to-[#c6f37c] font-bold"
+                        style="border-color: linear-gradient(to right, #cb7afa, #c6f37c) 1;">Download APP <i
+                            class="fa-solid fa-arrow-right ml-2 text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="w-[1200px] mt-[250px] flex items-center justify-between">
+            <div class="flex flex-col content-between space-y-6">
+                <p class="text-white text-[50px] w-[624px] h-auto font-bold leading-[57px]">See Your Sound</p>
+                <p class="text-white text-[18px] w-[624px] h-auto opacity-70">Enhance your auditory experience with
+                    dynamic music visualizations. Watch as your music comes to life with stunning graphics that move to
+                    the beat.</p>
+                <div class="rounded-full">
+                    <button
+                        class="mt-4 text-[18px] rounded-full border-[2px] w-[228px] h-[50px] bg-clip-text text-transparent bg-gradient-to-r from-[#cb7afa] to-[#c6f37c] font-bold"
+                        style="border-color: linear-gradient(to right, #cb7afa, #c6f37c) 1;">Download APP <i
+                            class="fa-solid fa-arrow-right ml-2 text-xl"></i></button>
+                </div>
+            </div>
+            <div class="">
+                <img src="https://static-web.melodio.ai/static/png/image-3-1x-D_RZ6F57.png" alt="" class="h-[400px]">
+            </div>
+        </div>
+        <div class="w-[1200px] mt-[250px] flex items-center justify-between">
+            <div class="">
+                <img src="https://static-web.melodio.ai/static/png/image-4-1x-C5dM0hji.png" alt="" class="h-[400px]">
+            </div>
+            <div class="flex flex-col content-between space-y-6">
+                <p class="text-white text-[50px] w-[624px] h-auto font-bold leading-[57px]">Instant Music Creation</p>
+                <p class="text-white text-[18px] w-[624px] h-auto opacity-70">Create full tracks in just in seconds. Our
+                    AI engine quickly generates high-quality music, allowing you to produce more in less time.</p>
+                <div class="rounded-full">
+                    <button
+                        class="mt-4 text-[18px] rounded-full border-[2px] w-[228px] h-[50px] bg-clip-text text-transparent bg-gradient-to-r from-[#cb7afa] to-[#c6f37c] font-bold"
+                        style="border-color: linear-gradient(to right, #cb7afa, #c6f37c) 1;">Download APP <i
+                            class="fa-solid fa-arrow-right ml-2 text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="w-[1200px] mt-[250px] flex items-center justify-between">
+            <div class="flex flex-col content-between space-y-6">
+                <p class="text-white text-[50px] w-[624px] h-auto font-bold leading-[57px]">Royalty-Free Creations</p>
+                <p class="text-white text-[18px] w-[624px] h-auto opacity-70">We are working on a feature to provide you
+                    with copyright-free music creation.</p>
+                <div class="rounded-full">
+                    <button
+                        class="mt-4 text-[18px] rounded-full border-[2px] w-[228px] h-[50px] bg-clip-text text-transparent bg-gradient-to-r from-[#cb7afa] to-[#c6f37c] font-bold"
+                        style="border-color: linear-gradient(to right, #cb7afa, #c6f37c) 1;">Download APP <i
+                            class="fa-solid fa-arrow-right ml-2 text-xl"></i></button>
+                </div>
+            </div>
+            <div class="">
+                <img src="https://static-web.melodio.ai/static/png/image-5-2x-BQFhe29n.png" alt="" class="h-[400px]">
+            </div>
+        </div>
+
+        <footer class="bg-red-500 w-full h-80 flex items-center">
+            <div class="container mx-auto text-white grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+
+                <!-- Contact Us Section -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Contact us</h3>
+                    <p class="text-sm text-gray-400">play@melodio.ai</p>
+                </div>
+
+                <!-- Social Contact Section -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Social contact</h3>
+                    <div class="flex justify-center space-x-4 text-2xl">
+                        <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-discord text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-400"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Terms Section -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Terms</h3>
+                    <div class="space-x-4 text-sm text-gray-400">
+                        <a href="https://plausible-nape-c6d.notion.site/Terms-of-Service-794a545bc9f24996a90bca2801aab8df"
+                            target="_blank" class="hover:text-white hover:underline">Terms of service</a>
+                        <a href="https://plausible-nape-c6d.notion.site/Privacy-Policy-eb0e6079c3c34b0c9e5b3eaceb4ae8d8"
+                            target="_blank" class="hover:text-white hover:underline">Privacy of Policy</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
