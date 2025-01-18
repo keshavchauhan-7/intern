@@ -60,4 +60,28 @@ function openModal() {
       closeModal();
     }
   });
+
+  
+ // Auto-scroll lyrics effect
+const lyricsContainer = document.getElementById("lyrics");
+const lyricsContent = document.getElementById("lyricsContent");
+const audioPlayer = document.getElementById("audioPlayer");
+
+audioPlayer.addEventListener("play", () => {
+    let scrollHeight = lyricsContainer.scrollHeight - lyricsContainer.clientHeight;
+    lyricsContent.style.transition = "transform 15s linear";
+    lyricsContent.style.transform = `translateY(-${scrollHeight}px)`;
+});
+
+audioPlayer.addEventListener("pause", () => {
+    lyricsContent.style.transition = "none";
+    lyricsContent.style.transform = "translateY(0)";
+});
+
+// Character counter for input box
+const melodyInput = document.getElementById("melodyInput");
+melodyInput.addEventListener("input", function () {
+    document.querySelector("p.text-right").innerText = `${this.value.length}/500`;
+});
+
   

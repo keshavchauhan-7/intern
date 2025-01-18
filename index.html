@@ -123,7 +123,45 @@
         <div class="text-6xl font-bold pt-8 bg-clip-text text-transparent bg-gradient-to-r from-[#cb7ff6] to-[#cbfc76]">
             Vibe Your Moment</div>
         <div class="text-2xl text-white pt-3">Endless stream of personalized music tailored to any scenario</div>
-        <div class="w-[42rem] h-[37rem] mt-12 rounded-3xl bg-gradient-to-r from-[#2e284a] to-[#3a2748]"></div>
+        
+        <div class="w-[42rem] h-[37rem] rounded-3xl bg-[#2b1638] p-6 text-white relative shadow-lg">
+          <!-- Lyrics Container (Auto Scroll) -->
+          <div id="lyrics" class="text-lg leading-relaxed h-[55%] overflow-hidden text-center px-4 relative">
+              <div id="lyricsContent" class="space-y-3">
+                  <p>Hey there, music lover, have you heard the news?</p>
+                  <p>Melodio’s here with tunes that'll light your fuse.</p>
+                  <p>With AI magic, we create your sound,</p>
+                  <p>Unlimited music, wherever you’re bound.</p>
+                  <p>Oh, Melodio, we’re here to redefine,</p>
+                  <p>Your music world, every beat, every rhyme.</p>
+                  <p>From gaming to workouts, or chillin' out at night,</p>
+                  <p>We got your tracks, everything feels just right.</p>
+              </div>
+          </div>
+  
+          <!-- Audio Player -->
+          <div class="w-full flex justify-center mt-4">
+              <audio id="audioPlayer" class="w-full max-w-lg" controls>
+                  <source src="./assests/song.mp3" type="audio/mpeg">
+              </audio>
+          </div>
+  
+          <!-- Melody Input Box -->
+          <p class="mt-4 text-gray-300 text-sm text-center">Describe the melody you need for your moment</p>
+          <textarea id="melodyInput" class="w-full h-24 mt-2 bg-[#3a2748] text-gray-200 p-4 rounded-md outline-none resize-none placeholder-gray-400"
+              placeholder="Feeling intrigued while exploring a new city"></textarea>
+          
+          <!-- Character Counter -->
+          <p class="text-gray-400 text-xs mt-1 text-right">0/500</p>
+  
+          <!-- Let's Vibe Button -->
+          <div class="flex justify-end mt-4">
+              <button class="bg-[#c6f37c] hover:bg-[#a3d553] text-black font-bold py-2 px-6 rounded-full flex items-center transition">
+                  <span class="mr-2">🎶</span> Let’s vibe
+              </button>
+          </div>
+      </div>
+        
         <div class="flex w-[42rem] text-sm mt-8">
             <p class="text-red-600">*</p>
             <p class="text-white ml-3">This is the demo version of Melodio AI.</p>
