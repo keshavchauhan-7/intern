@@ -41,3 +41,5 @@ document.addEventListener("click", function (event) {
         downloadQrCodeDiv.classList.add("hidden");  // Hide the QR code
     }
 });
+
+
