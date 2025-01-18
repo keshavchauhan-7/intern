@@ -43,3 +43,21 @@ document.addEventListener("click", function (event) {
 });
 
 
+// Function to Open Modal
+function openModal() {
+    document.getElementById('modal').classList.remove('hidden');
+  }
+  
+  // Function to Close Modal
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+  
+  // Close modal on clicking outside the modal content
+  document.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  
